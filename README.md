@@ -24,7 +24,7 @@ volumes:
   certs: 
 ```
 
-After starting the container the certificates will be available at `/srv/app/certs/{DOMAIN}
+After starting the container the certificates will be available in the `certs` volume with your domain name as the folder name.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
