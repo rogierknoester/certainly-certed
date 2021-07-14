@@ -1,0 +1,44 @@
+
+{
+  "apps": {
+    "tls": {
+      "certificates": {
+        "automate": [
+          "{DOMAIN}"
+        ]
+      },
+      "automation": {
+        "policies": [
+          {            
+            "issuers": [
+              {
+                "email": "{env.TLS_EMAIL}",
+                "challenges": {
+                  "dns": {
+                    "provider": {
+                      "auth_token": "{env.DIGITALOCEAN_TOKEN}",
+                      "name": "digitalocean"
+                    }
+                  }
+                },
+                "module": "acme"
+              },
+              {
+                "email": "{env.TLS_EMAIL}",
+                "challenges": {
+                  "dns": {
+                    "provider": {
+                      "auth_token": "{env.DIGITALOCEAN_TOKEN}",
+                      "name": "digitalocean"
+                    }
+                  }
+                },
+                "module": "zerossl"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
